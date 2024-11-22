@@ -11,13 +11,14 @@ import re
 # this is problematic, so I won't use it
 # from ..version_compare import version_compare
 
+
 class version_compare:
     '''Compare the current compiling version Python against a benchmark to determine which code to use'''
      
     def __init__(self):
         self._current_version = sys.version.split(' ')[0]
 
-    def current_version_greater_than_or_equal_than(self,compare_version):
+    def current_version_greater_than_or_equal_than(self, compare_version):
         def normalize(version_info):
             return [
                 int(version_component)
@@ -26,6 +27,7 @@ class version_compare:
                     r'(\.0+)*$', '', version_info).split(".")
             ]
         return normalize(self._current_version) >= normalize(compare_version)
+
 
 class Countput(Counter):
     ''' Extend Counter with some output methods '''
@@ -91,7 +93,7 @@ class Countput(Counter):
             in self.most_common(n)
         ]
 
-    def return_as_dict(self,frequency = None):
+    def return_as_dict(self, frequency=None):
         '''
         Return the Counter results
         as a dictionary 
@@ -101,9 +103,9 @@ class Countput(Counter):
         
         # do something different for versions of Python
         # where the dictionary is not automatically ordered
-        VC = version_compare();
+        vc = version_compare()
         # adding to an ordered dict takes 75% more time
-        return_dictionary = {} if VC.current_version_greater_than_or_equal_than("3.7.1") else OrderedDict()
+        return_dictionary = {} if vc.current_version_greater_than_or_equal_than("3.7.1") else OrderedDict()
         return_dictionary.update(
             {
                 frequency_tuple[0]: frequency_tuple[1]
