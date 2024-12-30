@@ -6,10 +6,7 @@ Created on Dec 14, 2018
 @author: Erik Pohl
 """
 from collections import Counter, OrderedDict
-import sys
-import re
-# this is problematic, so I won't use it
-from version_compare import version_compare
+
 
 
 class Countput(Counter):
@@ -83,7 +80,8 @@ class Countput(Counter):
         using an optional frequency parameter
         to limit results
         """
-        
+
+        from version_compare import version_compare
         # do something different for versions of Python
         # where the dictionary is not automatically ordered
         vc = version_compare()
