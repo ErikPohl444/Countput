@@ -1,8 +1,8 @@
-'''
+"""
 Created on Dec 14, 2018
 
 @author: Erik Pohl
-'''
+"""
 
 from src.Countput import Countput
 word_sentence = 'a b c d e f g h i a c e g i c g'
