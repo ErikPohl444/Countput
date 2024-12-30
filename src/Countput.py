@@ -81,7 +81,7 @@ class Countput(Counter):
         to limit results
         """
 
-        from version_compare import version_compare
+        from src.version_compare import version_compare
         # do something different for versions of Python
         # where the dictionary is not automatically ordered
         vc = version_compare()
