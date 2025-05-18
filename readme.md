@@ -96,15 +96,42 @@ Here are some elements I expect to be able to provide, if needed:
 
 ## Getting Started
 
-Download these files to corresponding folders under your Python src path.
+To start using Countput, simply download or clone this repository and ensure the source files are accessible in your Python environment. You can then import the `Countput` class and use it as shown in the Example Usage section.
 
-### Prerequisites
+Typical usage:
+```python
+from Countput import Countput
 
-I'll provide prereqs here.
+word_sentence = 'a b c d e f g h i a c e g i c g'
+word_list = word_sentence.split(' ')
+MyCountput = Countput(word_list)
+print(MyCountput.return_topn_as_list_of_strings(n=2))
+```
 
-### Installing
+---
 
-I will provide installation steps here.
+## Prerequisites
+
+- Python 3.6 or higher
+- No external dependencies required (uses only standard library)
+- Recommended: Familiarity with Python lists and basic object-oriented concepts
+
+---
+
+## Installing
+
+1. **Clone the Repository:**  
+   ```bash
+   git clone https://github.com/ErikPohl444/Countput.git
+   ```
+2. **Add to Python Path:**  
+   Ensure the directory containing `Countput.py` is in your Python path, or copy `Countput.py` to your project directory.
+3. **(Optional) Install as Editable Package:**  
+   If a `setup.py` is added in the future, you could use:  
+   ```bash
+   pip install -e .
+   ```
+   For now, direct import as shown above is recommended.
 
 ## Running the tests
 
